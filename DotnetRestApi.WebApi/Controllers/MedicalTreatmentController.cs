@@ -18,11 +18,11 @@
     public class MedicalTreatmentController : ControllerBase
     {
         private IApplication<MedicalTreatment> _medicalTreatment;
-        private Mapper _mapper;
+        private IMapper _mapper;
 
         public MedicalTreatmentController(
             IApplication<MedicalTreatment> medicalTreatment,
-            Mapper mapper)
+            IMapper mapper)
         { 
             _medicalTreatment = medicalTreatment;
             _mapper = mapper;

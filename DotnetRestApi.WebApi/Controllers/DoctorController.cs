@@ -18,12 +18,12 @@
     public class DoctorController : ControllerBase
     {
         private IApplication<Doctor> _doctor;
-        private Mapper _mapper;
+        private IMapper _mapper;
         private ILogger<DoctorController> _logger;
 
         public DoctorController(
             IApplication<Doctor> doctor,
-            Mapper mapper,
+            IMapper mapper,
             ILogger<DoctorController> logger)
         {
             _doctor = doctor;

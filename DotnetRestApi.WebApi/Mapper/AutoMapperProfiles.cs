@@ -12,9 +12,9 @@
     {
         public AutoMapperProfiles()
         {
-            CreateMap<Doctor, DoctorDto>();
-            CreateMap<MedicalTreatment, MedicalTreatmentDto>();
-            CreateMap<Patient, PatientDto>();
+            CreateMap<DoctorDto, Doctor>();
+            CreateMap<MedicalTreatmentDto, MedicalTreatment>();
+            CreateMap<PatientDto, Patient>();
         }
     }
 }
