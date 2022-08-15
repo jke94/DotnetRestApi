@@ -5,6 +5,18 @@ VisualStudioVersion = 17.3.32804.467
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotnetRestApi.Abstractions", "DotnetRestApi.Abstractions\DotnetRestApi.Abstractions.csproj", "{CC7F9F4D-F82D-4166-9A23-D8BB7A5F35E0}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotnetRestApi.Application", "DotnetRestApi.Application\DotnetRestApi.Application.csproj", "{74C2E4C6-A0EF-418A-A038-51632D162C38}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotnetRestApi.DataAccess", "DotnetRestApi.DataAccess\DotnetRestApi.DataAccess.csproj", "{BDB6B833-F2FE-4FB3-B4AA-46A49FA9AAE1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotnetRestApi.Entities", "DotnetRestApi.Entities\DotnetRestApi.Entities.csproj", "{9F627FCD-0848-49CB-B4E7-7D7B692679E6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotnetRestApi.Repository", "DotnetRestApi.Repository\DotnetRestApi.Repository.csproj", "{7E6404A0-F368-4540-BA2C-8CC12AB22B7F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotnetRestApi.Services", "DotnetRestApi.Services\DotnetRestApi.Services.csproj", "{6F16C2D2-F0B0-43B3-9358-0F63100AC7DB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotnetRestApi.WebApi", "DotnetRestApi.WebApi\DotnetRestApi.WebApi.csproj", "{6368457B-6CE6-42CB-8DC9-C079B25A3FBA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +27,30 @@ Global
 		{CC7F9F4D-F82D-4166-9A23-D8BB7A5F35E0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CC7F9F4D-F82D-4166-9A23-D8BB7A5F35E0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CC7F9F4D-F82D-4166-9A23-D8BB7A5F35E0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{74C2E4C6-A0EF-418A-A038-51632D162C38}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{74C2E4C6-A0EF-418A-A038-51632D162C38}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{74C2E4C6-A0EF-418A-A038-51632D162C38}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{74C2E4C6-A0EF-418A-A038-51632D162C38}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BDB6B833-F2FE-4FB3-B4AA-46A49FA9AAE1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BDB6B833-F2FE-4FB3-B4AA-46A49FA9AAE1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BDB6B833-F2FE-4FB3-B4AA-46A49FA9AAE1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BDB6B833-F2FE-4FB3-B4AA-46A49FA9AAE1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9F627FCD-0848-49CB-B4E7-7D7B692679E6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9F627FCD-0848-49CB-B4E7-7D7B692679E6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9F627FCD-0848-49CB-B4E7-7D7B692679E6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9F627FCD-0848-49CB-B4E7-7D7B692679E6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7E6404A0-F368-4540-BA2C-8CC12AB22B7F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7E6404A0-F368-4540-BA2C-8CC12AB22B7F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7E6404A0-F368-4540-BA2C-8CC12AB22B7F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7E6404A0-F368-4540-BA2C-8CC12AB22B7F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6F16C2D2-F0B0-43B3-9358-0F63100AC7DB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6F16C2D2-F0B0-43B3-9358-0F63100AC7DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6F16C2D2-F0B0-43B3-9358-0F63100AC7DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6F16C2D2-F0B0-43B3-9358-0F63100AC7DB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6368457B-6CE6-42CB-8DC9-C079B25A3FBA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6368457B-6CE6-42CB-8DC9-C079B25A3FBA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6368457B-6CE6-42CB-8DC9-C079B25A3FBA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6368457B-6CE6-42CB-8DC9-C079B25A3FBA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
