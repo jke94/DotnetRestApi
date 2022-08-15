@@ -35,14 +35,14 @@ namespace DotnetRestApi.WebApi
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "ApiRest.WebApi", Version = "v1" });
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "DotnetRestApi.WebApi", Version = "v1" });
             });
 
             services.AddDbContext<ApiDbContext>( options=>
             {
                 options.UseSqlServer(
                     Configuration.GetConnectionString("DefaultConnection"),
-                    b => b.MigrationsAssembly("ApiRest.WebApi")
+                    b => b.MigrationsAssembly("DotnetRestApi.WebApi")
                 );
             });
 
@@ -84,14 +84,19 @@ namespace DotnetRestApi.WebApi
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+        public void Configure(
+            IApplicationBuilder app, 
+            IWebHostEnvironment env,
+            ApiDbContext apiDbContext)
         {
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
                 app.UseSwagger();
-                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "ApiRest.WebApi v1"));
+                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "DotnetRestApi.WebApi v1"));
             }
+            
+            apiDbContext.Database.Migrate();
 
             app.UseHttpsRedirection();
 
