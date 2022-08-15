@@ -6,7 +6,9 @@
 
     public class ApiDbContext : IdentityDbContext
     {
-        public  DbSet<FootballTeam> Teams { get; set; }
+        public DbSet<Doctor> Doctors { get; set; }
+        public DbSet<MedicalTreatment> MedicalTreatments { get; set; }
+        public DbSet<Patient> Patients { get; set; }
 
         public ApiDbContext(DbContextOptions<ApiDbContext> options) : base(options)
         {

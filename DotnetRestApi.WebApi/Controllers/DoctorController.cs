@@ -1,41 +1,45 @@
 ﻿namespace DotnetRestApi.WebApi.Controllers
 {
+    #region
+
     using DotnetRestApi.Abstractions.Application;
     using DotnetRestApi.Entities;
     using DotnetRestApi.WebApi.DTOs;
     using Microsoft.AspNetCore.Authentication.JwtBearer;
     using Microsoft.AspNetCore.Authorization;
     using Microsoft.AspNetCore.Mvc;
+    using AutoMapper;
+
+    #endregion
 
     [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
     [Route("api/[controller]")]
     [ApiController]
-    public class FootballTeamController : ControllerBase
+    public class DoctorController : ControllerBase
     {
-        private IApplication<FootballTeam> _football;
+        private IApplication<Doctor> _doctor;
+        private Mapper _mapper;
 
-        public FootballTeamController(IApplication<FootballTeam> football)
+        public DoctorController(
+            IApplication<Doctor> doctor,
+            Mapper mapper)
         {
-            _football = football;
+            _doctor = doctor;
+            _mapper = mapper;
         }
 
         [HttpGet]
         public IActionResult Get()
         {
-            return Ok(_football.GetAll());
+            return Ok(_doctor.GetAll());
         }
 
         [HttpPost]
-        public IActionResult Save(FootballTeamDto dto)
+        public IActionResult AddMedicalTreatment(DoctorDto doctorDto)
         {
-            var element = new FootballTeam()
-            {
-                Name = dto.Name,
-                Score = dto.Score,
-                Manager = dto.Manager
-            };
+            var element = _mapper.Map<Doctor>(doctorDto);
 
-            return Ok(_football.Save(element));
+            return Ok(_doctor.Save(element));
         }
     }
 }
