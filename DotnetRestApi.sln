@@ -3,19 +3,33 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.3.32804.467
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotnetRestApi.Abstractions", "DotnetRestApi.Abstractions\DotnetRestApi.Abstractions.csproj", "{CC7F9F4D-F82D-4166-9A23-D8BB7A5F35E0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DotnetRestApi.Abstractions", "DotnetRestApi.Abstractions\DotnetRestApi.Abstractions.csproj", "{CC7F9F4D-F82D-4166-9A23-D8BB7A5F35E0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotnetRestApi.Application", "DotnetRestApi.Application\DotnetRestApi.Application.csproj", "{74C2E4C6-A0EF-418A-A038-51632D162C38}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DotnetRestApi.Application", "DotnetRestApi.Application\DotnetRestApi.Application.csproj", "{74C2E4C6-A0EF-418A-A038-51632D162C38}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotnetRestApi.DataAccess", "DotnetRestApi.DataAccess\DotnetRestApi.DataAccess.csproj", "{BDB6B833-F2FE-4FB3-B4AA-46A49FA9AAE1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DotnetRestApi.DataAccess", "DotnetRestApi.DataAccess\DotnetRestApi.DataAccess.csproj", "{BDB6B833-F2FE-4FB3-B4AA-46A49FA9AAE1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotnetRestApi.Entities", "DotnetRestApi.Entities\DotnetRestApi.Entities.csproj", "{9F627FCD-0848-49CB-B4E7-7D7B692679E6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DotnetRestApi.Entities", "DotnetRestApi.Entities\DotnetRestApi.Entities.csproj", "{9F627FCD-0848-49CB-B4E7-7D7B692679E6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotnetRestApi.Repository", "DotnetRestApi.Repository\DotnetRestApi.Repository.csproj", "{7E6404A0-F368-4540-BA2C-8CC12AB22B7F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DotnetRestApi.Repository", "DotnetRestApi.Repository\DotnetRestApi.Repository.csproj", "{7E6404A0-F368-4540-BA2C-8CC12AB22B7F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotnetRestApi.Services", "DotnetRestApi.Services\DotnetRestApi.Services.csproj", "{6F16C2D2-F0B0-43B3-9358-0F63100AC7DB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DotnetRestApi.Services", "DotnetRestApi.Services\DotnetRestApi.Services.csproj", "{6F16C2D2-F0B0-43B3-9358-0F63100AC7DB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotnetRestApi.WebApi", "DotnetRestApi.WebApi\DotnetRestApi.WebApi.csproj", "{6368457B-6CE6-42CB-8DC9-C079B25A3FBA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DotnetRestApi.WebApi", "DotnetRestApi.WebApi\DotnetRestApi.WebApi.csproj", "{6368457B-6CE6-42CB-8DC9-C079B25A3FBA}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "00.Abstractions", "00.Abstractions", "{BC80F3F4-60CE-4BED-A9C3-82B6E32833C6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "01.Entities", "01.Entities", "{1D82288C-C558-4394-9651-CCC1C99DC30D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "02.Services", "02.Services", "{7610FE6C-DB1C-419F-9E02-92961569281A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "03.UI", "03.UI", "{79BD6C48-E44A-4574-92E7-3311EBE9C6E5}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "04.Application", "04.Application", "{442589AF-C8D2-4D73-A380-D7C0B68E00EE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "05.Repository", "05.Repository", "{A792C9CB-57DF-43C2-811C-2610E16ABF0F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "06.DataAccess", "06.DataAccess", "{913CB831-9D21-48BD-B802-12A1D73087F0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -54,6 +68,15 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{CC7F9F4D-F82D-4166-9A23-D8BB7A5F35E0} = {BC80F3F4-60CE-4BED-A9C3-82B6E32833C6}
+		{74C2E4C6-A0EF-418A-A038-51632D162C38} = {442589AF-C8D2-4D73-A380-D7C0B68E00EE}
+		{BDB6B833-F2FE-4FB3-B4AA-46A49FA9AAE1} = {913CB831-9D21-48BD-B802-12A1D73087F0}
+		{9F627FCD-0848-49CB-B4E7-7D7B692679E6} = {1D82288C-C558-4394-9651-CCC1C99DC30D}
+		{7E6404A0-F368-4540-BA2C-8CC12AB22B7F} = {A792C9CB-57DF-43C2-811C-2610E16ABF0F}
+		{6F16C2D2-F0B0-43B3-9358-0F63100AC7DB} = {7610FE6C-DB1C-419F-9E02-92961569281A}
+		{6368457B-6CE6-42CB-8DC9-C079B25A3FBA} = {79BD6C48-E44A-4574-92E7-3311EBE9C6E5}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {4A3791FE-D817-45C5-8C4C-B5043E76CFF8}
