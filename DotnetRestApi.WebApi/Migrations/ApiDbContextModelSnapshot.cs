@@ -49,31 +49,6 @@ namespace DotnetRestApi.WebApi.Migrations
                     b.ToTable("Doctors");
                 });
 
-            modelBuilder.Entity("DotnetRestApi.Entities.MedicalTreatment", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
-
-                    b.Property<int>("Days")
-                        .HasColumnType("int");
-
-                    b.Property<string>("Medicine")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("PatientId")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("PatientId");
-
-                    b.ToTable("MedicalTreatments");
-                });
-
             modelBuilder.Entity("DotnetRestApi.Entities.Patient", b =>
                 {
                     b.Property<int>("Id")
@@ -308,17 +283,6 @@ namespace DotnetRestApi.WebApi.Migrations
                     b.ToTable("AspNetUserTokens", (string)null);
                 });
 
-            modelBuilder.Entity("DotnetRestApi.Entities.MedicalTreatment", b =>
-                {
-                    b.HasOne("DotnetRestApi.Entities.Patient", "Patient")
-                        .WithMany("Patients")
-                        .HasForeignKey("PatientId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Patient");
-                });
-
             modelBuilder.Entity("DotnetRestApi.Entities.Patient", b =>
                 {
                     b.HasOne("DotnetRestApi.Entities.Doctor", "Doctor")
@@ -382,11 +346,6 @@ namespace DotnetRestApi.WebApi.Migrations
                 });
 
             modelBuilder.Entity("DotnetRestApi.Entities.Doctor", b =>
-                {
-                    b.Navigation("Patients");
-                });
-
-            modelBuilder.Entity("DotnetRestApi.Entities.Patient", b =>
                 {
                     b.Navigation("Patients");
                 });

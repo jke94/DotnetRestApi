@@ -1,6 +1,10 @@
 ﻿namespace DotnetRestApi.Entities
 {
+    #region using
+    
     using DotnetRestApi.Abstractions;
+
+    #endregion
 
     public abstract class Entity : IEntity
     {

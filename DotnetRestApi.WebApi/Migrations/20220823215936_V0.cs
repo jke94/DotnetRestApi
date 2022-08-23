@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace DotnetRestApi.WebApi.Migrations
 {
-    public partial class FirstMigration : Migration
+    public partial class V0 : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -193,27 +193,6 @@ namespace DotnetRestApi.WebApi.Migrations
                         onDelete: ReferentialAction.Cascade);
                 });
 
-            migrationBuilder.CreateTable(
-                name: "MedicalTreatments",
-                columns: table => new
-                {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    Medicine = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Days = table.Column<int>(type: "int", nullable: false),
-                    PatientId = table.Column<int>(type: "int", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_MedicalTreatments", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_MedicalTreatments_Patients_PatientId",
-                        column: x => x.PatientId,
-                        principalTable: "Patients",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                });
-
             migrationBuilder.CreateIndex(
                 name: "IX_AspNetRoleClaims_RoleId",
                 table: "AspNetRoleClaims",
@@ -254,11 +233,6 @@ namespace DotnetRestApi.WebApi.Migrations
                 filter: "[NormalizedUserName] IS NOT NULL");
 
             migrationBuilder.CreateIndex(
-                name: "IX_MedicalTreatments_PatientId",
-                table: "MedicalTreatments",
-                column: "PatientId");
-
-            migrationBuilder.CreateIndex(
                 name: "IX_Patients_DoctorId",
                 table: "Patients",
                 column: "DoctorId");
@@ -282,16 +256,13 @@ namespace DotnetRestApi.WebApi.Migrations
                 name: "AspNetUserTokens");
 
             migrationBuilder.DropTable(
-                name: "MedicalTreatments");
+                name: "Patients");
 
             migrationBuilder.DropTable(
                 name: "AspNetRoles");
 
             migrationBuilder.DropTable(
                 name: "AspNetUsers");
-
-            migrationBuilder.DropTable(
-                name: "Patients");
 
             migrationBuilder.DropTable(
                 name: "Doctors");
