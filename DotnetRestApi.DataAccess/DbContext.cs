@@ -39,5 +39,13 @@
 
             return entity;
         }
+
+        public T Update(T entity)
+        {
+            _items.Update(entity);
+            _ctx.SaveChanges();
+
+            return entity;
+        }
     }
 }

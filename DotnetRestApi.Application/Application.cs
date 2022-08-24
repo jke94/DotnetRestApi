@@ -37,5 +37,10 @@
         {
             return _repository.Save(entity);
         }
+
+        public T Update(T entity)
+        {
+            return _repository.Update(entity);
+        }
     }
 }

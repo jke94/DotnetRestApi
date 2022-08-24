@@ -36,5 +36,10 @@
         {
             return _ctx.Save(entity);
         }
+
+        public T Update(T entity)
+        {
+            return _ctx.Update(entity);
+        }
     }
 }
