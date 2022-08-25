@@ -1,3 +1,5 @@
+![example workflow](https://github.com/jke94/DotnetRestApi/actions/workflows/dotnet.yml/badge.svg)
+
 # DotnetRestApi
 
 ## Add Migration
