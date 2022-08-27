@@ -27,7 +27,7 @@
             return _ctx.GetAll();
         }
 
-        public T GetById(int id)
+        public T? GetById(int id)
         {
             return _ctx.GetById(id);
         }

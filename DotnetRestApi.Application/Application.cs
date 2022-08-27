@@ -28,7 +28,7 @@
             return _repository.GetAll();
         }
 
-        public T GetById(int id)
+        public T? GetById(int id)
         {
             return _repository.GetById(id);
         }

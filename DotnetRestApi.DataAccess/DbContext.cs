@@ -4,6 +4,7 @@
     using DotnetRestApi.Abstractions;
     using System.Collections.Generic;
     using Microsoft.EntityFrameworkCore;
+    using System.Xml.Linq;
 
     public class DbContext<T> : IDbContext<T> where T : class, IEntity
     {
@@ -30,9 +31,9 @@
             return _items.ToList();
         }
 
-        public T GetById(int id)
+        public T? GetById(int id)
         {
-            return _items.Where(item => item.Id.Equals(id)).FirstOrDefault();
+            return _items?.Where(item => item.Id.Equals(id)).FirstOrDefault(); 
         }
 
         public T Save(T entity)

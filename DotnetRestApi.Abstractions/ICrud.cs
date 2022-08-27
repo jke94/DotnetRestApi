@@ -8,7 +8,7 @@
         
         IList<T> GetAll();
         
-        T GetById(int id);
+        T? GetById(int id);
 
         bool Remove(T entity);
 
