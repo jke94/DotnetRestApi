@@ -4,7 +4,6 @@
     using DotnetRestApi.Abstractions;
     using System.Collections.Generic;
     using Microsoft.EntityFrameworkCore;
-    using System.Xml.Linq;
 
     public class DbContext<T> : IDbContext<T> where T : class, IEntity
     {

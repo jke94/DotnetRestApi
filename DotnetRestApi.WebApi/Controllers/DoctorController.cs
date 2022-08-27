@@ -17,9 +17,15 @@
     [ApiController]
     public class DoctorController : ControllerBase
     {
+        #region Fields
+
         private IApplication<Doctor> _doctor;
         private IMapper _mapper;
         private ILogger<DoctorController> _logger;
+
+        #endregion
+
+        #region Constructor
 
         public DoctorController(
             IApplication<Doctor> doctor,
@@ -31,14 +37,24 @@
             _logger = logger;
         }
 
+        #endregion
+
+        #region HTTP GET
+
         [HttpGet]
-        public IActionResult Get()
+        public async Task<IActionResult> Get()
         {
-            return Ok(_doctor.GetAll());
+            var taskResult = await Task.Run(() => _doctor.GetAll());
+
+            return Ok(taskResult);
         }
 
+        #endregion
+
+        #region HTTP POST
+
         [HttpPost]
-        public IActionResult AddMedicalTreatment(DoctorDto doctorDto)
+        public async Task<IActionResult> AddMedicalTreatment(DoctorDto doctorDto)
         {
             if(doctorDto == null)
             {
@@ -49,9 +65,9 @@
                 return BadRequest(message);
             }
 
-            var element = _mapper.Map<Doctor>(doctorDto);
+            var element = await Task.Run(() => _mapper.Map<Doctor>(doctorDto));
 
-            if(element == null)
+            if (element == null)
             {
                 string message = "The structure of the object is not correct.";
 
@@ -62,5 +78,54 @@
 
             return Ok(_doctor.Save(element));
         }
+
+        #endregion
+
+        #region HTTP PUT
+
+        [HttpPut]
+        public async Task<IActionResult> Put(int id, DoctorDto doctorDto)
+        {
+            try
+            {
+                if (doctorDto == null)
+                {
+                    string message = "Object can not be null.";
+
+                    _logger.LogWarning(message);
+
+                    return BadRequest(message);
+                }
+
+                var result = await Task.Run(() => _doctor.GetById(id));
+
+                if (result == null)
+                {
+                    string message = $"The doctor with the id: {id}, doesn´t exists.";
+
+                    _logger.LogWarning(message);
+
+                    return BadRequest(message);
+                }
+
+                // Update fields
+                result.Name = doctorDto.Name;
+                result.Surname = doctorDto.Surname;
+                result.DateBorn = doctorDto.DateBorn;
+                result.Age = doctorDto.Age;
+
+                return Ok(_doctor.Update(result));
+            }
+            catch (Exception e)
+            {
+                _logger.LogError(e.Message);
+
+                return StatusCode(
+                    StatusCodes.Status500InternalServerError,
+                    "Error retrieving data from the database");
+            }
+        }
+
+        #endregion
     }
 }

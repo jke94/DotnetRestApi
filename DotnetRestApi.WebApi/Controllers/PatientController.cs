@@ -44,9 +44,11 @@
         #region Methods: HTTP GET
 
         [HttpGet]
-        public IActionResult Get()
+        public async Task<IActionResult> Get()
         {
-            return Ok(_patient.GetAll());
+            var taskResult = await Task.Run(() => _patient.GetAll());
+
+            return Ok(taskResult);
         }
 
         [HttpGet("{id:int}")]
