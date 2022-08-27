@@ -18,9 +18,9 @@
             _repository = repository;
         }
 
-        public void Delete(int id)
+        public bool Remove(T entity)
         {
-            _repository.Delete(id);
+            return _repository.Remove(entity);
         }
 
         public IList<T> GetAll()

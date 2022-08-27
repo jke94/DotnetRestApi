@@ -17,9 +17,9 @@
             _ctx = ctx;
         }
 
-        public void Delete(int id)
+        public bool Remove(T entity)
         {
-            _ctx.Delete(id);
+            return _ctx.Remove(entity);
         }
 
         public IList<T> GetAll()

@@ -17,9 +17,12 @@
             _items = ctx.Set<T>();
         }
 
-        public void Delete(int id)
+        public bool Remove(T entity)
         {
+            var item = _items.Remove(entity);
+            _ctx.SaveChanges();
 
+            return item is not null;
         }
 
         public IList<T> GetAll()

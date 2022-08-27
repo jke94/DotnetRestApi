@@ -170,6 +170,42 @@
         }
 
         #endregion
-    
+
+        #region HTTP POST
+
+        [HttpDelete("{id:int}")]
+        public async Task<IActionResult> DeleteId(int id)
+        {
+            var isDeletedSuccessfully = false;
+
+            try
+            {
+                var result = await Task.Run(() => _patient.GetById(id));
+
+                if (result == null)
+                {
+                    string message = $"The patient with the id: {id}, doesn´t exists.";
+
+                    _logger.LogWarning(message);
+
+                    return NotFound(message);
+                }
+
+                // TODO: Delete...
+                isDeletedSuccessfully = _patient.Remove(result);
+
+                return Ok(isDeletedSuccessfully);
+            }
+            catch (Exception e)
+            {
+                _logger.LogError(e.Message);
+
+                return StatusCode(
+                    StatusCodes.Status500InternalServerError,
+                    "Error retrieving data from the database");
+            }
+        }
+
+        #endregion
     }
 }

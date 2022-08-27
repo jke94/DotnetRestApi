@@ -9,8 +9,8 @@
         IList<T> GetAll();
         
         T GetById(int id);
-        
-        void Delete(int id);
+
+        bool Remove(T entity);
 
         T Update(T entity);
     }
